@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+// import mealsNavigator file and return it in the jsx to get first page in mealsnavigator file
+import MealsNavigator from './navigation/MealsNavigator';
+
 // importing fonts from asset folder-- npm i --save expo-font
 import * as Font from 'expo-font';
 // npm i expo-app-loading, also for external fonts
@@ -29,9 +32,7 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <MealsNavigator />
   );
 }
 
