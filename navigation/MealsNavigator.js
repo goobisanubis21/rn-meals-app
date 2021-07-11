@@ -11,7 +11,7 @@ import MealDetailScreen from '../screens/MealDetailScreen';
 // function from the create stack import to tell App that these are the screens we are able to move between
 const MealsNavigator = createStackNavigator({
     Categories: CatergoriesScreen,
-    CatergoryMeals: {
+    CategoryMeals: {
         screen: CatergoryMealsScreen
     },
     MealDetail: MealDetailScreen
