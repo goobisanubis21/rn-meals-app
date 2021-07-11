@@ -8,7 +8,10 @@ const CategoriesScreen = (props) => {
 
     const renderGridItem = (itemData) => {
         return (
-            <TouchableOpacity style={styles.gridItem} onPress={() => {props.navigation.navigate('CategoryMeals')} }>
+            // to send data from one page to the next use params within the .natigate({})
+            <TouchableOpacity style={styles.gridItem} onPress={() => {props.navigation.navigate({routeName: 'CategoryMeals', params: {
+                categoryId: itemData.item.id
+            }})} }>
                 <View>
                     <Text>
                         {itemData.item.title}
