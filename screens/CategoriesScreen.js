@@ -9,9 +9,13 @@ const CategoriesScreen = (props) => {
     const renderGridItem = (itemData) => {
         return (
             // to send data from one page to the next use params within the .natigate({})
-            <TouchableOpacity style={styles.gridItem} onPress={() => {props.navigation.navigate({routeName: 'CategoryMeals', params: {
-                categoryId: itemData.item.id
-            }})} }>
+            <TouchableOpacity style={styles.gridItem} onPress={() => {
+                props.navigation.navigate({
+                    routeName: 'CategoryMeals', params: {
+                        categoryId: itemData.item.id
+                    }
+                })
+            }}>
                 <View>
                     <Text>
                         {itemData.item.title}
@@ -50,11 +54,7 @@ const CategoriesScreen = (props) => {
 
 // changes the header title
 CategoriesScreen.navigationOptions = {
-    headerTitle: 'Meal Categories',
-    headerStyle: {
-        backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : 'white'
-    },
-    headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primaryColor
+    headerTitle: 'Meal Categories'
 }
 
 export default CategoriesScreen
