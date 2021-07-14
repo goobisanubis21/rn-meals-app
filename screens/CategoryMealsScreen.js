@@ -1,29 +1,26 @@
 import React from 'react'
-import { Button, StyleSheet, Text, View, Platform } from 'react-native'
-import { CATEGORIES } from '../data/dummy-data'
-import CategoriesScreen from './CategoriesScreen'
-import Colors from '../constants/Colors'
+import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { CATEGORIES, MEALS } from '../data/dummy-data'
 
 const CategoryMealsScreen = (props) => {
 
+    const renderMealItem = (itemData) => {
+        return (
+            <View>
+                <Text>{itemData.item.title}</Text>
+            </View>
+        )
+    }
+
     // to get the data from the naviagte({}) use getParam
     const catId = props.navigation.getParam('categoryId')
-    const selectedCategory = CATEGORIES.find(cat => cat.id === catId)
+    // const selectedCategory = CATEGORIES.find(cat => cat.id === catId)
+
+    const displayedMeals = MEALS.filter(meal => meal.categoryIds.indexOf(catId) >= 0)
 
     return (
         <View style={styles.screen}>
-            <Text>Category Meal Screen</Text>
-            <Text>{selectedCategory.title}</Text>
-
-            <Button title='Go to Details'
-                onPress={() => {
-                    props.navigation.navigate({ routeName: 'MealDetail' })
-                }} />
-
-            {/* custom button to go back to previous page */}
-            <Button title='Go Back' onPress={() => {
-                props.navigation.goBack()
-            }} />
+            <FlatList data={displayedMeals} keyExtractor={(item, index) => item.id} renderItem={renderMealItem} />
         </View>
     )
 }
@@ -37,7 +34,7 @@ CategoryMealsScreen.navigationOptions = (navigationData) => {
 
     return {
         headerTitle: selectedCategory.title,
-        
+
     }
 }
 
