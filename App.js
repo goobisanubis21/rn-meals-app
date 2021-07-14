@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+// smooths out feel of app
+import { enableScreens } from 'react-native-screens'
+
 // import mealsNavigator file and return it in the jsx to get first page in mealsnavigator file
 import MealsNavigator from './navigation/MealsNavigator';
 
@@ -8,6 +11,9 @@ import MealsNavigator from './navigation/MealsNavigator';
 import * as Font from 'expo-font';
 // npm i expo-app-loading, also for external fonts
 import AppLoading from 'expo-app-loading';
+
+// smooths out feel of app - line 5
+enableScreens()
 
 // function to fetch the fonts
 const fetchFonts = () => {

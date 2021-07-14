@@ -39,16 +39,18 @@ const MealsNavigator = createStackNavigator({
         }
     }
 },
-// you can use defaultNavigationOptions to apply the same style for every single page
+    // you can use defaultNavigationOptions to apply the same style for every single page
+    // initalRouteName will tell the app what screen to start out on
 
-// {
-//     defaultNavigationOptions: {
-//         headerStyle: {
-//             backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : 'white'
-//         },
-//         headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primaryColor
-//     }
-// }
+    // {
+    //    initialRouteName: 'Categories',
+    //     defaultNavigationOptions: {
+    //         headerStyle: {
+    //             backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : 'white'
+    //         },
+    //         headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primaryColor
+    //     }
+    // }
 );
 
 export default createAppContainer(MealsNavigator)

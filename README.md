@@ -1,6 +1,7 @@
 ## Meals App
 
-### expo init .
+### Creating expo app
+* expo init .     -or-     expo init projectName
 
 ### NPM:
 ---------------------------------------------------------------------
@@ -13,3 +14,4 @@ navagition version 4x:
 * npm install react-navigation
 * expo install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
 * npm install --save react-navigation-stack
+* npm install react-native-screens
