@@ -15,3 +15,8 @@ navagition version 4x:
 * expo install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
 * npm install --save react-navigation-stack
 * npm install react-native-screens
+
+star favorite button dependencies 
+* npm install react-navigation-header-buttons
+* npm install @expo/vector-icons
+* npm install --save @react-navigation/native
