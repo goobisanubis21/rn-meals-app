@@ -20,3 +20,6 @@ star favorite button dependencies
 * npm install react-navigation-header-buttons
 * npm install @expo/vector-icons
 * npm install --save @react-navigation/native
+
+needed for bottom tabs
+* npm install react-navigation-tabs
