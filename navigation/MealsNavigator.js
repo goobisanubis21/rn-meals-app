@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Text } from 'react-native'
+
 // createAppContainer is used for switching between screens
 import { createAppContainer } from 'react-navigation';
 
@@ -87,7 +89,8 @@ const MealsFavTabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarIcon: (tabInfo) => {
                 return <Ionicons name='ios-restaurant' size={25} color={tabInfo.tintColor} />
-            }
+            },
+            tabBarLabel: <Text>Meals!</Text>
         }
     },
     Favorites: {
@@ -95,7 +98,8 @@ const MealsFavTabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarIcon: (tabInfo) => {
                 return <Ionicons name='ios-star' size={25} color={tabInfo.tintColor} />
-            }
+            },
+            tabBarLabel: <Text>Favorites!</Text>
         }
     }
 }, {
