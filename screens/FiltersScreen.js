@@ -4,9 +4,13 @@ import { StyleSheet, Text, View } from 'react-native'
 const FiltersScreen = (props) => {
     return (
         <View style={styles.screen}>
-            <Text></Text>
+            <Text>The filter screen</Text>
         </View>
     )
+}
+
+FiltersScreen.navigationOptions = {
+    headerTitle: 'Filter Meals'
 }
 
 export default FiltersScreen

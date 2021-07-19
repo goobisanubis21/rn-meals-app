@@ -23,3 +23,6 @@ star favorite button dependencies
 
 needed for bottom tabs
 * npm install react-navigation-tabs
+
+needed for drawer navigator
+* npm install react-navigation-drawer

@@ -18,6 +18,7 @@ import MealDetailScreen from '../screens/MealDetailScreen';
 import Colors from '../constants/Colors';
 import FavoritesScreen from '../screens/FavoritesScreen'
 import Meal from '../models/meal';
+import FiltersScreen from '../screens/FiltersScreen'
 
 // function from the create stack import to tell App that these are the screens we are able to move between along with the navigation options which gives the header styling
 const MealsNavigator = createStackNavigator({
