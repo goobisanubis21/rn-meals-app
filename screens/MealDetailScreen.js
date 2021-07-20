@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View, ScrollView, Image } from 'react-native'
 import { MEALS } from '../data/dummy-data'
 import { HeaderButtons, Item } from 'react-navigation-header-buttons'
 import HeaderButton from '../components/HeaderButton'
@@ -11,14 +11,18 @@ const MealDetailScreen = (props) => {
     const selectedMeal = MEALS.find(meal => meal.id === mealId)
 
     return (
-        <View style={styles.screen}>
-            <Text>{selectedMeal.title}</Text>
-
-            {/* function to go all the way back to the first screen within the stack */}
-            <Button title='Go Back to Categories' onPress={() => {
-                props.navigation.popToTop()
-            }} />
-        </View>
+        <ScrollView>
+            <Image source={{ uri: selectedMeal.imageUrl }} style={styles.image} />
+            <View style={styles.details}>
+                <Text>{selectedMeal.duration}m</Text>
+                <Text>{selectedMeal.complexity.toUpperCase()}</Text>
+                <Text>{selectedMeal.affordability.toUpperCase()}</Text>
+            </View>
+            <Text style={styles.title}>Ingredients</Text>
+            <Text style={styles.listItem}>{selectedMeal.ingredients.map(ingredient => <Text key={ingredient}>{ingredient}</Text>)}</Text>
+            <Text style={styles.title}>Steps</Text>
+            <Text style={styles.listItem}>{selectedMeal.steps.map(step => <Text key={step}>{step}</Text>)}</Text>
+        </ScrollView>
     )
 }
 
@@ -28,19 +32,34 @@ MealDetailScreen.navigationOptions = (navigationData) => {
 
     return {
         headerTitle: selectedMeal.title,
-        headerRight: <HeaderButtons HeaderButtonComponent = {HeaderButton}>
-            <Item title='Favorite' iconName='ios-star' onPress={() => {console.log('fav')}} />
+        headerRight: <HeaderButtons HeaderButtonComponent={HeaderButton}>
+            <Item title='Favorite' iconName='ios-star' onPress={() => { console.log('fav') }} />
         </HeaderButtons>
     }
-
 }
 
 export default MealDetailScreen
 
 const styles = StyleSheet.create({
-    screen: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+    image: {
+        width: '100%',
+        height: 200
+    },
+    details: {
+        flexDirection: 'row',
+        padding: 15,
+        justifyContent: 'space-around'
+    },
+    title: {
+        fontFamily: 'open-sans-bold',
+        fontSize: 22,
+        textAlign: 'center'
+    },
+    listItem: {
+        marginVertical: 10,
+        marginHorizontal: 20,
+        borderColor: '#ccc',
+        borderWidth: 1,
+        padding: 10
     }
 })
