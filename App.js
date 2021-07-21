@@ -12,8 +12,18 @@ import * as Font from 'expo-font';
 // npm i expo-app-loading, also for external fonts
 import AppLoading from 'expo-app-loading';
 
+import { createStore, combineReducers } from 'redux'
+import mealsReducer from './store/reducers/meals'
+import { Provider } from 'react-redux'
+
 // smooths out feel of app - line 5
 enableScreens()
+
+const rootReducer = combineReducers({
+  meals: mealsReducer
+})
+
+const store = createStore(rootReducer)
 
 // function to fetch the fonts
 const fetchFonts = () => {
@@ -38,7 +48,9 @@ export default function App() {
   }
 
   return (
-    <MealsNavigator />
+    <Provider store={store}>
+      <MealsNavigator />
+    </Provider>
   );
 }
 

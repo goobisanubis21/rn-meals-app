@@ -26,3 +26,6 @@ needed for bottom tabs
 
 needed for drawer navigator
 * npm install react-navigation-drawer
+
+needed for redux
+* npm install redux react-redux
